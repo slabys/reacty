@@ -1,17 +1,20 @@
 import React from 'react';
+import 'bootstrap/dist/css/bootstrap.css';
 import './assets/css/default.css';
 
 //components
-import Header from './components/header/header';
+import Header from './components/header/Header';
+import EventSection from './components/eventSection/EventSection';
 
-function App() {
-  return (
-    <div className="App">
-      <Header />
-        <p>LOL</p>
-        <p>I am good</p>
-    </div>
-  );
+class App extends React.Component {
+    render() {
+        return (
+        <div className="App">
+          <Header />
+          <EventSection />
+        </div>
+      );
+    }
 }
 
 export default App;
