@@ -1,4 +1,4 @@
-import {useBooleanKnob} from "@stardust-ui/docs-components";
+//import {useBooleanKnob} from "@stardust-ui/docs-components";
 import React, {Component} from 'react';
 import {Header, Menu, Segment, Sidebar, Icon} from "semantic-ui-react";
 
@@ -6,7 +6,7 @@ import {Header, Menu, Segment, Sidebar, Icon} from "semantic-ui-react";
 
 class SidebarMenu extends React.Component {
     render() {
-    const [visible, setVisible] = useBooleanKnob({ name: 'visible' })
+    //const [visible, setVisible] = useBooleanKnob({ name: 'visible' })
 
         return (
             <Sidebar.Pushable as={Segment}>
@@ -14,8 +14,8 @@ class SidebarMenu extends React.Component {
                          animation='overlay'
                          icon='labeled'
                          inverted
-                         visible={false}
-                         onHide={() => setVisible(false)}
+                         //visible={false}
+                         //onHide={() => setVisible(false)}
                          vertical
                          width='thin'
                 >
