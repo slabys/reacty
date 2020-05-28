@@ -1,30 +1,39 @@
-//import {useBooleanKnob} from "@stardust-ui/docs-components";
-import React, {Component} from 'react';
-import {Header, Menu, Segment, Sidebar, Icon} from "semantic-ui-react";
+import React from 'react';
+import Sidebar from "react-sidebar";
 
-
+import './header.scss';
 
 class SidebarMenu extends React.Component {
-    render() {
-    //const [visible, setVisible] = useBooleanKnob({ name: 'visible' })
+    constructor(props) {
+        super(props);
+        this.state = {
+            sidebarOpen: false
+        };
+        this.onSetSidebarOpen = this.onSetSidebarOpen.bind(this);
+    }
 
+    onSetSidebarOpen(open) {
+        this.setState({ sidebarOpen: open });
+    }
+
+    render() {
         return (
-            <Sidebar.Pushable as={Segment}>
-                <Sidebar as={Menu}
-                         animation='overlay'
-                         icon='labeled'
-                         inverted
-                         //visible={false}
-                         //onHide={() => setVisible(false)}
-                         vertical
-                         width='thin'
-                >
-                    <Menu.Item as={'item'}>
-                        <Icon name='home' />
-                        Home
-                    </Menu.Item>
-                </Sidebar>
-            </Sidebar.Pushable>
+            <Sidebar sidebarClassName="w-25"
+                sidebar={<b>Menu</b>}
+                open={this.state.sidebarOpen}
+                onSetOpen={this.onSetSidebarOpen}
+                styles={
+                    {sidebar: {background: "white"}}
+                }
+            >
+                <button className="bars" onClick={()=> this.onSetSidebarOpen(true)}>
+                    <div>&nbsp;</div>
+                    <div>&nbsp;</div>
+                    <div>&nbsp;</div>
+                </button>
+
+            </Sidebar>
+
         );
     }
 }

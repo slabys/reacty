@@ -12,17 +12,10 @@ class Header extends React.Component {
     render() {
     return (
         <header className="Header">
-            <nav className="w-100 nav">
-
-                <button className="bars">
-                    <div>&nbsp;</div>
-                    <div>&nbsp;</div>
-                    <div>&nbsp;</div>
-                </button>
-
-                <SidebarMenu />
-
-            </nav>
+            <navbar className="w-100 nav">
+                <SidebarMenu className="sidebar" title="Medievalix" />
+                <h1>Medievalix</h1>
+            </navbar>
         </header>
     );
     }
